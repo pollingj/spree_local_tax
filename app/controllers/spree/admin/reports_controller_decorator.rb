@@ -8,7 +8,7 @@ Spree::Admin::ReportsController.class_eval do
     }
   )
 
-  before_filter :basic_report_setup, :actions => :local_tax
+  #before_filter :basic_report_setup, :actions => :local_tax
 
   def local_tax
     @report = Spree::AdvancedReport::LocalTaxReport.new(params)

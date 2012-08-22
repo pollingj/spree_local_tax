@@ -21,8 +21,7 @@ module Spree
 
       # assumes SQL backend for now
 
-      Spree::LocalTax.find_by_city_and_state_id(address.city.upcase, address.state.id) ||
-      Spree::LocalTax.find_by_zip(address.zipcode)
+      Spree::LocalTax.find_by_country(address.country)
     end
 
     def taxable_amount(order)
