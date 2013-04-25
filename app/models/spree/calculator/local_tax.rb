@@ -21,7 +21,7 @@ module Spree
 
       # assumes SQL backend for now
 
-      Spree::LocalTax.find_by_country(address.country)
+      address.nil? ? Spree::LocalTax.find_by_country('GB') : Spree::LocalTax.find_by_country(address.country)
     end
 
     def taxable_amount(order)
